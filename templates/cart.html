@@ -1,0 +1,60 @@
+{% extends 'layout.html' %}
+{% block title %}My Cart - Coffee Shop{%endblock %}
+
+{% block extra_css %}
+
+  <link rel="stylesheet" href="../static/coffee.css" />
+
+{% endblock %}
+  
+  
+{% block content %}
+
+<header>
+  <h5 class="h5-title">Coffee</h5>
+  <nav>
+    <ul>
+      <li class="text"><a href="/">Home</a></li>
+      <li class="text"><a href="/coffee">Coffee</a></li>
+      <li class="text"><a href="/about">About</a></li>
+      <li><a href="/cart">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" 
+        class="bi bi-bag-heart" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5zm1 0V4H
+        15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0M14 14V5H2v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1M8 7.9
+        93c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132"/> </svg></a></li>
+    </ul>
+  </nav>
+    <p class="username">🥸 Welcome, {{ userName }}!</p>
+    <a href="/logout"><button class="text login">Logout</button></a>
+</header>
+
+<div class="container-sm">
+    <h3>My Cart</h3>
+    <form action="/clear_cart" method="post" style="display:inline;">
+        <button type="submit" class="btn btn-danger clear">Clear my Cart</button>
+    </form>
+    {% if cart_items %}
+        {% for item in cart_items %}
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="{{ item.img }}" class="img-fluid rounded-start" alt="{{ item.name }}">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ item.name }}</h5>
+                            <p class="card-text">{{ item.description }}</p>
+                            <p class="price"><strong>${{ item.price }}</strong></p>
+                            <form action="/removeFromCart" method="post" style="display:inline;">
+                                <input type="hidden" name="item_id" value="{{ item.id }}">
+                                <button type="submit" class="btn btn-danger">Remove</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+    <h3>Your cart is empty.</h3>
+    {% endif %}
+</div>
+{% endblock %}

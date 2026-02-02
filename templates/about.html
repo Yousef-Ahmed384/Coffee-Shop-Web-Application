@@ -1,0 +1,47 @@
+{% extends 'layout.html' %} 
+{% block title %}About Us - Coffee Shop {% endblock%} 
+
+{% block extra_css %}
+<link rel="stylesheet" href="../static/about.css" />
+{% endblock %}
+
+{% block content %}
+<div class="container-sm bgcolor">
+  <img
+    src="../static/images/image.png"
+    class="img-fluid"
+    alt="About Us Image"
+  />
+  <h3>Any Recomendations ? 🤩</h3>
+  <form action="/about" method="POST">
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label"
+        >Email address</label
+      >
+      <input
+        name="email"
+        type="email"
+        class="form-control"
+        id="exampleFormControlInput1"
+        placeholder="name@example.com"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label"
+        >Recommendations</label
+      >
+      <textarea
+        name="recommendations"
+        class="form-control"
+        id="exampleFormControlTextarea1"
+        rows="3"
+      ></textarea>
+    </div>
+    <button type="submit" class="addtocart-btn">Suggest</button>
+</form>
+{% if message %}
+    <h3>{{ message }}</h3>
+{% endif %}
+</div>
+
+{% endblock %}

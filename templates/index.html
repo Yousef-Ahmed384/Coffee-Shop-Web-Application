@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+{% block title %}Coffee Shop - Home{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="../static/index.css" />
+{% endblock %}
+
+
+{% block content %}
+    <header>
+      <h5 class="h5-title">Coffee</h5>
+      <nav>
+        <ul>
+          <li class="text"><a href="/">Home</a></li>
+          <li class="text"><a href="/coffee">Coffee</a></li>
+          <li class="text"><a href="/about">About</a></li>
+          {% if userName %}
+          <li><a href="/cart">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" 
+            class="bi bi-bag-heart" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5zm1 0V4H
+            15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0M14 14V5H2v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1M8 7.9
+            93c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132"/> </svg></a></li>
+          {% endif %}
+        </ul>
+      </nav>
+      {% if userName %}
+      <p class="username">🥸 Welcome, {{ userName }}!</p>
+      <a href="/logout"><button class="text login">Logout</button></a>
+      {% else %}
+      <a href="/login"><button class="text login">Login</button></a>
+      <a href="/register"><button class="text login">Register</button></a>
+
+      {% endif %}
+    </header>
+
+    <div class="hero-section">
+      <div class="hero-details">
+        <h5 class="welcome-title">Welcome!</h5>
+        <h5 class="hero-title">We serve the richest coffee in the city!</h5>
+        <button class="btn-ordernow">Order Now</button>
+      </div>
+    </div>
+    <div class="middle-part">
+      <h4 class="middle-title">Our Popular Products</h4>
+    <div class="container-sm">
+      <div class="row">
+        {% for item in coffee_items[0:6] %}
+        <div class="col-sm-6 col-md-4 mb-4">
+          <div class="card cardHover" style="width: 18rem">
+            <img
+              src="{{ item.img }}"
+              class="card-img-top"
+              alt="{{ item.name }}"
+            />
+            <div class="card-body">
+              <h5 class="card-title">{{ item.name }}</h5>
+              <p class="card-text">{{ item.description }}</p>
+              <p class="price"><strong>${{ item.price }}</strong></p>
+              <form action="/add_to_cart" method="POST">
+                <input type="hidden" name="item_id" value="{{ item.id }}">
+                <button type="submit" class="addtocart-btn">Add to Cart</button>
+              </form>
+            </div>
+          </div>
+        </div>
+    
+
+        {% endfor %}
+      </div>
+    </div>
+    </div>
+
+    <footer>
+      <h5 class="footer-title">Our Happy Customers</h5>
+      <div class="review-cards">
+        {% for review in range(3) %}
+        <div class="review">
+          <div class="review-details">
+            <div class="profile-image-div">
+              <img
+                src="../static/images/Aesthetic White _ Seashell Wallpaper Collage.jpg"
+                alt="profile-image"
+              />
+            </div>
+            <h6>sam williams</h6>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
+            facere numquam consequuntur mollitia ipsa, aperiam culpa deleniti,
+            modi obcaecati reiciendis sunt minus quo cum natus et accusantium
+            molestias quam eum.
+          </p>
+        </div>
+        {% endfor %}
+      </div>
+
+      <section>
+        <h4>Join in and get 15% Off!</h4>
+        <form action="">
+          <input class="email" type="email" placeholder="Enter your email" />
+          <input class="submit-btn" type="submit" value="Subscribe" />
+        </form>
+      </section>
+      <h6 id="copy">&copy; 2026 Coffee Shop. All rights reserved.</h6>
+    </footer>
+  </body>
+{% endblock %}
