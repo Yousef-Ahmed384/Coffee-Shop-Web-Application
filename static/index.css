@@ -1,0 +1,187 @@
+.hero-section {
+  position: relative;
+  display: flex;
+  margin: 0px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80");
+  height: 500px;
+  width: 100%;
+  align-items: center;
+}
+
+.hero-details {
+  margin-left: 8%;
+}
+
+.welcome-title {
+  margin: 0px 0px 15px 0px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: white;
+  font-size: 28px;
+  font-weight: 300;
+}
+
+.hero-title {
+  color: white;
+  margin: 0px 0px 30px 0px;
+  font-family: Georgia, "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
+  font-size: 48px;
+  font-weight: bold;
+  max-width: 600px;
+  line-height: 1.2;
+}
+
+.btn-ordernow {
+  background-color: rgb(221, 186, 7);
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  padding: 15px 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.addtocart-btn {
+  background-color: var(--secondary_color);
+  color: white;
+  border: none;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: auto;
+}
+
+.addtocart-btn:hover {
+  background-color: rgb(221, 186, 7);
+  transform: scale(1.05);
+}
+
+
+.btn-ordernow:hover {
+  background-color: rgb(216, 194, 165);
+  transform: scale(1.05);
+}
+
+footer {
+  background-color: var(--secondary_color);
+  padding: 60px 20px 20px 20px;
+}
+
+.footer-title {
+  margin: 0px 0px 40px 0px;
+  color: var(--primary_color);
+  text-align: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 32px;
+}
+
+.review-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto 60px auto;
+}
+
+.review {
+  background-color: var(--primary_color);
+  border-radius: 15px;
+  padding: 25px;
+}
+
+.review p {
+  font-size: 14px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  line-height: 1.6;
+  margin: 15px 0px 0px 0px;
+  color: #333;
+}
+
+.review h6 {
+  margin: 0;
+  font-size: 18px;
+  color: var(--secondary_color);
+  text-transform: capitalize;
+}
+
+.review img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.review-details {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+
+
+section {
+  background-color: var(--primary_color);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+section h4 {
+  margin: 0px 0px 20px 0px;
+  font-size: 24px;
+  font-family: Georgia, "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
+  color: var(--secondary_color);
+}
+
+section form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.email {
+  flex: 1;
+  border: 2px solid #ddd;
+  font-size: 16px;
+  padding: 12px 20px;
+  border-radius: 8px;
+}
+
+.email:focus {
+  background-color: white;
+  border-color: var(--secondary_color);
+  outline: none;
+}
+
+
+#copy {
+  margin: 20px 0px 0px 0px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--primary_color);
+}
+
+.submit-btn {
+  border: none;
+  background-color: var(--secondary_color);
+  color: white;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: rgb(221, 186, 7);
+  transform: scale(1.05);
+}

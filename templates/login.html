@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+{% block title %}Login - Coffee Shop{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="../static/form.css" />
+{% endblock %}
+
+{% block content %}
+    <div class="outer">
+        <div class="inner">
+            <form id="signin-form" action="/login" method="post" class="Sign-in">
+                <h3>Log In</h3>
+                <label for="name">Username</label>
+                <input autofocus id="name" name="name" type="text " placeholder="Enter your Name" required />
+                <label for="password">Password</label>
+                <input id="password" name="password" type="password" placeholder="Enter your Password" required />
+                <button type="submit">Log In</button>
+                <p>Don't have an account ? <a href="/register">Sign Up</a></p>
+                {% if error %}
+                    <p class="error">{{ error }}</p>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

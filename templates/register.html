@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% block title %}Sign Up - Coffee Shop{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="../static/form.css" />
+{% endblock %}
+{% block content %}
+    <div class="outer">
+        <div class="inner">
+            <form id="signup-form" action="/register" method="post" class="Sign-up-form">
+                <h3>Sign Up</h3>
+                <label for="name">Username</label>
+                <input autofocus autocomplete="off" id="name" name="name" type="text " placeholder="Enter your Name" required />
+                <label for="password">Password</label>
+                <input id="password" name="password" type="password" placeholder="Enter your Password" required />
+                <label for="confirmation">Password Confirmation</label>
+                <input id="confirmation" name="confirmation" type="password" placeholder="Confirm your Password" required />
+                <label for="email">E-mail</label>
+                <input id="email" name="email" type="email" placeholder="Enter your E-mail" required />
+                <button type="submit">Sign Up</button>
+                <p>Already have an account ? <a href="/login">Log In</a></p>
+                {% if error %}
+                    <p class="error">{{ error }}</p>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+{% endblock %}

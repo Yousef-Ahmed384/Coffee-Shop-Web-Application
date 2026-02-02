@@ -1,0 +1,186 @@
+::selection{
+    color: rgba(229, 161, 34, 0.963);
+    background-color: rgba(62, 43, 18, 0.863);
+}
+#loading-overlay{
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: #c1b8a3; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+
+}
+
+.spinner{
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #555;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+    
+}
+
+.text {
+  /* font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif; */
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+:root {
+  --primary_color: rgb(220, 210, 189);
+  --secondary_color: rgb(62, 43, 18);
+}
+
+nav a {
+  text-decoration: none;
+  color: aliceblue;
+  font-size: 16px;
+  margin-right: 20px;
+  transition: all 0.3s ease;
+}
+
+nav li {
+  transition: transform 0.3s ease;
+}
+
+nav li:hover {
+  transform: scale(1.1);
+}
+
+nav a:hover {
+    color: rgb(216, 194, 165);
+}
+
+header {
+    background-color: var(--secondary_color);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 15px 40px;
+  position: relative;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    gap: 30px;
+}
+.login{
+    background-color:rgb(252, 177, 27);
+    color:rgb(21, 14, 5);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 0px;
+    transition: all 0.3s ease;
+}
+.login:hover{
+    transform: scale(1.1);
+    background-color:rgb(216, 194, 165);
+}
+.h5-title {
+  color: rgb(224, 235, 244);
+  margin: 0px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+}
+.username{
+  color: white;
+  font-size: 16px;
+  position: absolute;
+  top: 20px;
+  right: 150px;
+}
+.addtocart-btn {
+  background-color: var(--secondary_color);
+  color: white;
+  border: none;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: auto;
+}
+
+.addtocart-btn:hover {
+  background-color: rgb(221, 186, 7);
+  transform: scale(1.05);
+}
+
+.middle-part {
+  background-color: var(--primary_color);
+    padding: 20px 5px;
+}
+
+.middle-part h4{
+    color: var(--secondary_color);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 38px;
+    text-align: center;
+    margin: 10px 0px 40px 0px;
+}
+.cardHover{
+    transition: all 0.3s ease;
+}
+.cardHover:hover{
+    box-shadow: #333 0px 4px 8px;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .hero-title {
+    font-size: 32px;
+  }
+
+  .welcome-title {
+    font-size: 24px;
+  }
+
+  .items-div {
+    flex-wrap: wrap;
+  }
+
+  .card {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+
+  section form {
+    flex-direction: column;
+    align-items: center;
+  }
+}
