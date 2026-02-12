@@ -130,7 +130,7 @@ Coffee-Shop/
 ## 👨‍💻 Author
 
 _Youssef Ahmed Zaki_\
-Backend Developer \| Flask Enthusiast
+Full Stack Developer \| Flask Enthusiast
 
 ---
 
