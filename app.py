@@ -189,4 +189,5 @@ def clear_cart():
 
     return redirect('/cart')
     
-
+if __name__ == "__main__":
+    app.run()
